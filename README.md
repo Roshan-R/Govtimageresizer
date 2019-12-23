@@ -6,7 +6,7 @@ Here's a python script which does exactly this!
 
 Things to add:
 
-- [ ] Image pixel resize without loosing aspect ratio\n
-- [ ] Image size resizer\n
+- [ ] Image pixel resize without loosing aspect ratio
+- [ ] Image size resizer
 - [ ] Convert to another format
 
