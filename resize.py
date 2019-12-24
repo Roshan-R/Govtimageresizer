@@ -1,5 +1,6 @@
 from PIL import Image
 import os.path
+import sys
 
 #function to calculate the best width and height for the image
 
@@ -20,6 +21,7 @@ def save(img):
     if os.path.exists(dest+'.png'):
         print("This file already exists")
         save(img)
+    img.show()
     img.save(dest+'.png')
 
 
@@ -39,6 +41,10 @@ def pixel():
         img = img.resize((reqwidth,reqheight), Image.ANTIALIAS)
         save(img)  
 def main():
+    img = Image.open(sys.argv[1])
+    if not img:
+        print("The file does not exist")
+        exit()
     print("Welcome to the image resizer tool !")
     print("\n1 - Resize image pixels\n2 - Resize image file size\n3 - Change the extension\n")
     selection = int(input("Enter any one of the selection (1-3) : "))
