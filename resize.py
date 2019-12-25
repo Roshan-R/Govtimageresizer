@@ -40,6 +40,7 @@ def pixel():
         reqwidth,reqheight = cal(img,max_width,max_height)
         img = img.resize((reqwidth,reqheight), Image.ANTIALIAS)
         save(img)  
+
 def main():
     img = Image.open(sys.argv[1])
     if not img:
