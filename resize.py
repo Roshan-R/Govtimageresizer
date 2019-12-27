@@ -30,7 +30,8 @@ def pdf(img):
     save(pdf,extension)
     print("\nCreated .pdf file sucessfully !")
 
-def pixel(img,extension):
+def pixel(img):
+    extension = sys.argv[1].split('.')[1]
     max_width = int(input("\nEnter the max width :"))
     max_height = int(input("Enter the max height : "))
     width,height = img.size
@@ -51,11 +52,13 @@ def main():
         print("The file does not exist")
         exit()
     print("Welcome to the image resizer tool !")
-    print("\n1 - Resize image pixels\n2 - Resize image file size\n3 - Convert to pdf\n")
-    selection = int(input("Enter any one of the selection (1-3) : "))
-    extension = sys.argv[1].split('.')[1]
+    if len(sys.argv) == 2:
+        print("\n1 - Resize image pixels\n2 - Resize image file size\n3 - Convert to pdf\n")
+        selection = int(input("Enter any one of the selection (1-3) : "))
+    else:
+        selection = int(sys.argv[2])
     if selection == 1:
-        pixel(img,extension)
+        pixel(img)
     if selection == 3:
         pdf(img)
 main()
