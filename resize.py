@@ -18,6 +18,8 @@ def cal(img,basewidth,max_height):
 
 def save(img,extension):
     dest = input("\nEnter the destinantion file name : ")
+    if '.' in dest:
+        dest = dest.split('.')[0]
     if os.path.exists(dest+'.'+extension):
         print("This file already exists")
         save(img)
