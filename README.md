@@ -9,4 +9,5 @@ Things to add:
 - [ ] Image pixel resize without loosing aspect ratio
 - [ ] Image file size resizer
 - [ ] Convert to pdf
+- [ ] Calling the script using arguments
 
