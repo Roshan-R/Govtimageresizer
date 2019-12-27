@@ -28,6 +28,7 @@ def pdf(img):
     extension = 'pdf'
     pdf = img.convert('RGB')
     save(pdf,extension)
+    print("\nCreated .pdf file sucessfully !")
 
 def pixel(img,extension):
     max_width = int(input("\nEnter the max width :"))
@@ -43,6 +44,7 @@ def pixel(img,extension):
         reqwidth,reqheight = cal(img,max_width,max_height)
         img = img.resize((reqwidth,reqheight), Image.ANTIALIAS)
         save(img,extension)  
+
 def main():
     img = Image.open(sys.argv[1])
     if not img:
@@ -57,4 +59,5 @@ def main():
     if selection == 3:
         pdf(img)
 main()
+print("\nThanks for using the tool ! ....")
 
