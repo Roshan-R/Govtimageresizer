@@ -11,14 +11,24 @@ Features of gimgr:
     3. make it into pdf format
     
 CLI Implementation :
+    0. input file should be specified.
     1. executable should be called gimgr
     2. for feature(1) i.e, resizing pixels, -p option or --pixel
-    3. for feature(2) i.e, resizing filesize,-f option or --filesize
+    3. for feature(2) i.e, resizing filesize,-f option or --file
     4. for feature(3) i.e, converting to pdf,-c option or --pdf
-    5. size can be put as -d MAX_WIDTHxMAX_HEIGHT 
+    5. size can be put as -d MAX_WIDTHxMAX_HEIGHT or --dimensions MAX_WIDTHxMAX_HEIGHT
         e.g, -d 200x100
-    6. filesize can be specified as -s FILE_SIZE_IN_KBkb
+    6. filesize can be specified as -s FILE_SIZE_IN_KBkb or --size FILE_SIZE_IN_KBkb
         e.g, -s 100kb
     7. output file name can be specified as -o FILENAME
         e.g, -o test.png
-    
+
+    So briefly,
+        -p or --pixel requires dimensions
+            -d or --dimensions
+        -f or --file requires size
+            -s or --size
+        -c or --pdf 
+        -o for output
+        
+        
