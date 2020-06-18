@@ -21,8 +21,9 @@ def save(img,extension):
     if '.' in dest:
         dest = dest.split('.')[0]
     if os.path.exists(dest+'.'+extension):
-        print("This file already exists")
-        save(img)
+        s = input("This file already exists,\nOverwrite the existing file ? (y/N) : ") 
+        if s == 'n' or s == 'N':
+            return 0
     img.show()
     img.save(dest+'.'+extension)
 

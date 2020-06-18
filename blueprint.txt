@@ -1,0 +1,24 @@
+This is the Idea file for the gimgr
+
+making two apps:
+    1. cli based one
+    2. gui based on made using tkinter
+    3. interacitve cli 
+    
+Features of gimgr:
+    1. resize image by pixel
+    2. resize image by filesize
+    3. make it into pdf format
+    
+CLI Implementation :
+    1. executable should be called gimgr
+    2. for feature(1) i.e, resizing pixels, -p option or --pixel
+    3. for feature(2) i.e, resizing filesize,-f option or --filesize
+    4. for feature(3) i.e, converting to pdf,-c option or --pdf
+    5. size can be put as -d MAX_WIDTHxMAX_HEIGHT 
+        e.g, -d 200x100
+    6. filesize can be specified as -s FILE_SIZE_IN_KBkb
+        e.g, -s 100kb
+    7. output file name can be specified as -o FILENAME
+        e.g, -o test.png
+    
