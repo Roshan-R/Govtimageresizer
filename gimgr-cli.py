@@ -24,10 +24,14 @@ def save(img, image, output):
     print(output)
     img.save(output)
 
-def pdf(img):
+def pdf(image):
+    img = Image.open(image)
+    if not img:
+        print("The file does not exist")
+        exit()
     extension = 'pdf'
     pdf = img.convert('RGB')
-    save(pdf,extension)
+    save(pdf, image, extension)
     print("\nCreated .pdf file sucessfully !")
 
 def pixel(image, max_width, max_height, aspect_ratio, output):
@@ -59,21 +63,27 @@ def main():
     group.add_argument('-d', '--dimension',metavar='',  help="specify dimensions")
 
     parser.add_argument('-a', '--preserve', action='store_true', help="whether to preserve aspect ratio of not")
-    parser.add_argument('-i', '--input', metavar='')
+    parser.add_argument('-c', '--convert', action='store_true', help="converts given file to pdf")
+    parser.add_argument('-i', '--input', metavar='', help="Name of input file")
     parser.add_argument('-o', '--output', metavar='', help="Output filename", required='True')
     
     args = parser.parse_args()
+
     if args.pixel:
+        if args.file:
+            print("Invalid input format")
+            print("Use -h or --help for help")
+            exit()
         if not args.dimension:
             print('You need to specify the dimension for pixel ')
         else:
             print("you've chosen p")
             dimension = args.dimension
             pixel(args.input,int(dimension.split('x')[0]), int(dimension.split('x')[1]), args.preserve, args.output)
-    elif args.output:
-        print("you've chosen f")
+    elif args.convert:
+        pdf(args.input)
     else:
-        print(answer)
+        print("Nothin here :(")
     
 if __name__ == "__main__":
     main()
