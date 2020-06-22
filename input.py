@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'form.ui'
+# Form implementation generated from reading ui file 'input.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -9,15 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QFileDialog, QMessageBox
-from PIL import Image
-from PyQt5.QtGui import QIntValidator
 
-class Ui_MainWindow(object):
+
+class Ui_InputWindow(object):
     def setupUi(self, MainWindow):
-        self.onlyInt = QIntValidator()
-        self.isImage = 0
-
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(464, 538)
         MainWindow.setMinimumSize(QtCore.QSize(464, 538))
@@ -28,7 +23,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_Main = QtWidgets.QLabel(self.centralwidget)
-        self.label_Main.setGeometry(QtCore.QRect(0, 0, 471, 71))
+        self.label_Main.setGeometry(QtCore.QRect(0, 20, 471, 71))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(51, 106, 188))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -57,13 +52,13 @@ class Ui_MainWindow(object):
         self.label_Main.setAlignment(QtCore.Qt.AlignCenter)
         self.label_Main.setObjectName("label_Main")
         self.label_link = QtWidgets.QLabel(self.centralwidget)
-        self.label_link.setGeometry(QtCore.QRect(130, 480, 191, 18))
+        self.label_link.setGeometry(QtCore.QRect(120, 460, 191, 18))
         self.label_link.setTextFormat(QtCore.Qt.MarkdownText)
         self.label_link.setAlignment(QtCore.Qt.AlignCenter)
         self.label_link.setOpenExternalLinks(True)
         self.label_link.setObjectName("label_link")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(10, 140, 241, 151))
+        self.frame.setGeometry(QtCore.QRect(10, 120, 241, 151))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -76,12 +71,6 @@ class Ui_MainWindow(object):
         self.input_Height.setMaxLength(4)
         self.input_Height.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.input_Height.setObjectName("input_Height")
-        self.input_Height.setValidator(self.onlyInt)
-        self.input_Width = QtWidgets.QLineEdit(self.frame)
-        self.input_Width.setValidator(self.onlyInt)
-        self.input_Width.setMaxLength(4)
-        self.input_Width.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.input_Width.setObjectName("input_Width")
         self.gridLayout.addWidget(self.input_Height, 0, 1, 1, 1)
         self.label_Width_px = QtWidgets.QLabel(self.frame)
         self.label_Width_px.setObjectName("label_Width_px")
@@ -92,6 +81,10 @@ class Ui_MainWindow(object):
         self.label_Height = QtWidgets.QLabel(self.frame)
         self.label_Height.setObjectName("label_Height")
         self.gridLayout.addWidget(self.label_Height, 0, 0, 1, 1)
+        self.input_Width = QtWidgets.QLineEdit(self.frame)
+        self.input_Width.setMaxLength(4)
+        self.input_Width.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.input_Width.setObjectName("input_Width")
         self.label_Size = QtWidgets.QLabel(self.frame)
         self.label_Size.setObjectName("label_Size")
         self.gridLayout.addWidget(self.label_Size, 2, 0, 1, 1)
@@ -99,7 +92,6 @@ class Ui_MainWindow(object):
         self.input_Size.setMaxLength(5)
         self.input_Size.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.input_Size.setObjectName("input_Size")
-        self.input_Size.setValidator(self.onlyInt)
         self.gridLayout.addWidget(self.input_Size, 2, 1, 1, 1)
         self.label_Width = QtWidgets.QLabel(self.frame)
         self.label_Width.setObjectName("label_Width")
@@ -110,7 +102,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.input_Width, 1, 1, 1, 1)
         self.formLayout_2.setLayout(0, QtWidgets.QFormLayout.LabelRole, self.gridLayout)
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setGeometry(QtCore.QRect(10, 310, 230, 88))
+        self.frame_2.setGeometry(QtCore.QRect(10, 290, 230, 88))
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -121,8 +113,6 @@ class Ui_MainWindow(object):
         self.checkBox_Name = QtWidgets.QCheckBox(self.frame_2)
         self.checkBox_Name.setObjectName("checkBox_Name")
         self.gridLayout_2.addWidget(self.checkBox_Name, 0, 0, 1, 1)
-
-
         self.lineEdit = QtWidgets.QLineEdit(self.frame_2)
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout_2.addWidget(self.lineEdit, 0, 1, 1, 1)
@@ -135,7 +125,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.dateEdit, 1, 1, 1, 1)
         self.formLayout.setLayout(0, QtWidgets.QFormLayout.LabelRole, self.gridLayout_2)
         self.frame_3 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_3.setGeometry(QtCore.QRect(260, 140, 181, 261))
+        self.frame_3.setGeometry(QtCore.QRect(260, 120, 181, 261))
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -155,15 +145,15 @@ class Ui_MainWindow(object):
         self.button_ChangePhoto.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.button_ChangePhoto.setObjectName("button_ChangePhoto")
         self.gridLayout_3.addWidget(self.button_ChangePhoto, 0, 0, 1, 1)
-        self.button_Download = QtWidgets.QPushButton(self.centralwidget)
-        self.button_Download.setGeometry(QtCore.QRect(300, 420, 103, 34))
-        self.button_Download.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.button_Download.setAutoDefault(True)
-        self.button_Download.setDefault(True)
-        self.button_Download.setFlat(False)
-        self.button_Download.setObjectName("button_Download")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(300, 400, 103, 34))
+        self.pushButton.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.pushButton.setAutoDefault(True)
+        self.pushButton.setDefault(True)
+        self.pushButton.setFlat(False)
+        self.pushButton.setObjectName("pushButton")
         self.frame_4 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_4.setGeometry(QtCore.QRect(10, 410, 231, 51))
+        self.frame_4.setGeometry(QtCore.QRect(10, 390, 231, 51))
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -182,15 +172,6 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.horizontalLayout.addWidget(self.comboBox)
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(20, 70, 411, 51))
-        font = QtGui.QFont()
-        font.setFamily("Roboto")
-        font.setItalic(True)
-        self.label_2.setFont(font)
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setWordWrap(True)
-        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 464, 30))
@@ -202,8 +183,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        self.button_ChangePhoto.clicked.connect(self.ChangeImage)
-        self.button_Download.clicked.connect(self.handler_Download)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -219,95 +198,19 @@ class Ui_MainWindow(object):
         self.checkBox_Name.setText(_translate("MainWindow", "Name"))
         self.checkBox.setText(_translate("MainWindow", "Date"))
         self.button_ChangePhoto.setText(_translate("MainWindow", "Upload Photo"))
-        self.button_Download.setText(_translate("MainWindow", "Download"))
+        self.pushButton.setText(_translate("MainWindow", "Submit"))
         self.label.setText(_translate("MainWindow", "Format"))
         self.comboBox.setItemText(0, _translate("MainWindow", "jpeg"))
         self.comboBox.setItemText(1, _translate("MainWindow", "gif"))
         self.comboBox.setItemText(2, _translate("MainWindow", "pdf"))
-        self.label_2.setText(_translate("MainWindow", "Photo reizer is a free program which helps you to resize the width, length, format and size of any image acccording to the specifications provided by various government agencies"))
-
-    def CalculateImageRatio(self):  
-        img_width, img_height = self.img.width, self.img.height
-        ratio = img_width/img_height
-        input_ratio = self.max_width/self.max_height
-        print(ratio)
-        if ratio > input_ratio:
-            img_width = self.max_width
-            img_height = int(img_width/ratio) 
-        else:
-            img_height = self.max_height
-            img_width = int(img_height*ratio)
-        self.width, self.height = img_width, img_height
-
-        # if img_width > img_height:
-            # img_width = self.max_width
-            # img_height = int(img_width/ratio) 
-        # else:
-            # img_height = self.max_height
-            # img_width = int(img_height*ratio)
-        # self.width, self.height = img_width, img_height
-        print(self.width, self.height)
-
-    def check_Input(self):
-        self.max_width = self.input_Width.text()
-        self.max_height = self.input_Height.text()
-        self.max_size = self.input_Size.text()
-        print(self.max_width, self.max_height, self.max_size, self.isImage)
-        for ele in self.max_width, self.max_height, self.max_size, self.isImage:
-            if not ele:
-                return 0
-        self.max_width = int(self.input_Width.text())
-        self.max_height = int(self.input_Height.text())
-        self.max_size = int(self.input_Size.text())
-        return 1
-
-    def handler_Download(self):
-        if not self.check_Input():
-            self.ShowError("Please enter the required information")
-        else:
-            print("Calculating Image Dimensions")
-            #self.CalculateImage()
-            self.SaveImage()
-
-    def ShowError(self, string):
-        err = QMessageBox()
-        err.setWindowTitle("Input Error !")
-        err.setText(string)
-        err.setIcon(QMessageBox.Warning)
-        x = err.exec_()
-    
-    def ChangeImage(self):
-        self.filepath = QFileDialog.getOpenFileName()
-        self.label_Image.setPixmap(QtGui.QPixmap(self.filepath[0]))
-        self.button_ChangePhoto.setText("Change Photo")
-        self.isImage = 1
-        self.img = Image.open(self.filepath[0])
-        print(self.img.width, self.img.height)
-
-    def SaveImage(self):
-        self.format = str(self.comboBox.currentText())
-        if self.format == "jpeg":
-            self.img = self.img.resize((self.max_width,self.max_height), Image.ANTIALIAS)
-        if self.format == "pdf":
-            self.img = self.img.convert('RGB')
-        name = QFileDialog.getSaveFileName()
-        name = name[0] + "." + self.format
-        if '.' in name:
-            if name.split('.')[1] != self.format:
-                self.ShowError("Format Error")
-        print(name)
-        self.img.save(name)
-
-
 import resource_rc
-
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_InputWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

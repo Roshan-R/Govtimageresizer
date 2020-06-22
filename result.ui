@@ -121,7 +121,7 @@
    <widget class="QLabel" name="label_Image">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>120</y>
       <width>151</width>
       <height>191</height>
@@ -137,7 +137,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_paragraph">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -156,7 +156,8 @@
      </font>
     </property>
     <property name="text">
-     <string>Photo reizer is a free program which helps you to resize the width, length, format and size of any image acccording to the specifications provided by various government agencies</string>
+     <string>Thanks for using Photo Resizer.
+ Click below to download</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -171,7 +172,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLabel" name="label_url">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -193,18 +194,44 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_Upload">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>327</x>
-      <y>353</y>
-      <width>91</width>
-      <height>31</height>
+      <x>50</x>
+      <y>350</y>
+      <width>351</width>
+      <height>36</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Upload</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>&lt;&lt;Back</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Download</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
