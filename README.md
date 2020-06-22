@@ -4,11 +4,9 @@ Ever feel fed up while registeriing for something in the Indian Government to re
 
 Here's a program which does exactly this!
 
+Photo reizer is a free program which helps you to resize the width, length, format and 
+size of any image acccording to the specifications provided by 
+various government agencies
 
-Things to add:
-
-- [ ] Image pixel resize without loosing aspect ratio
-- [ ] Image file size resizer
-- [ ] Convert to pdf
-- [ ] Calling the script using arguments
+##Screenshots 
 
