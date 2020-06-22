@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
-from PIL import Image
+from PIL import Image, ImageDraw
 from PyQt5.QtGui import QIntValidator
 
 class Ui_MainWindow(object):
@@ -276,6 +276,31 @@ class Ui_MainWindow(object):
         err.setIcon(QMessageBox.Warning)
         x = err.exec_()
     
+#added by HariSK20    
+    def add_date(self, margin = 0):
+        from PIL import ImageDraw, ImageFont
+        img_width, img_height = self.img.width + 2*margin, int( 1.2* self.img.height) + 3*margin
+#        fnt_size = int( 0.8*self.img.width/100)
+        fnt = ImageFont.load_default()
+        img_width, img_height = self.img.width + 2*margin, int( 1.1* self.img.height) + 3*margin
+        blank_img = Image.new("RGB",(img_width, img_height), color = "white")
+        img2 = self.img
+        tmp_date = self.dateEdit.date() 
+        date = str(tmp_date.toPyDate())
+        dte = ""
+        cnt = 1
+        print(date.split('-'))
+        for i in date.split('-')[::-1]:
+            dte = dte + i
+            cnt +=1
+            if cnt<=3:
+                dte = dte + "-"
+        blank_img.paste(img2,( margin, margin))
+        d = ImageDraw.Draw(blank_img)
+        fnt_width, fnt_height = fnt.getsize(date)
+        d.text(((self.img.width//2 - fnt_width//2), int(img_height/4 + 0.75*self.img.height)), dte, fill = (100,100,100))
+        self.img = blank_img
+
     def ChangeImage(self):
         self.filepath = QFileDialog.getOpenFileName()
         self.label_Image.setPixmap(QtGui.QPixmap(self.filepath[0]))
@@ -285,6 +310,8 @@ class Ui_MainWindow(object):
         print(self.img.width, self.img.height)
 
     def SaveImage(self):
+        if self.checkBox.isChecked():
+            self.add_date()
         self.format = str(self.comboBox.currentText())
         if self.format == "jpeg":
             self.img = self.img.resize((self.max_width,self.max_height), Image.ANTIALIAS)
