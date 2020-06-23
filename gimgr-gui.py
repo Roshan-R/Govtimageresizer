@@ -277,14 +277,17 @@ class Ui_MainWindow(object):
         x = err.exec_()
     
 #added by HariSK20    
-    def add_date(self, flg = 1,margin = 0,):
+    def add_date(self, flg = 0,margin = 0,):
         from PIL import ImageDraw, ImageFont
 #        img_width, img_height = self.img.width + 2*margin, int( 1.2* self.img.height) + 3*margin
 #        fnt_size = int( 0.8*self.img.width/100)
         fnt = ImageFont.load_default()
-        mul = 1.1 + flg/20
-        img_width, img_height = self.img.width + 2*margin, int( mul
-            * self.img.height) + 3*margin
+        mul = 1
+        if flg>2:
+            mul = 1 + 2/10
+        else:
+            mul = 1 + flg/10
+        img_width, img_height = self.img.width + 2*margin, int( mul*self.img.height) + 3*margin
         blank_img = Image.new("RGB",(img_width, img_height), color = "white")
         img2 = self.img
         blank_img.paste(img2,( margin, margin))
