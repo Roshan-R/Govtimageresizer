@@ -328,7 +328,8 @@ class Ui_MainWindow(object):
             name_flg = 1
         if self.checkBox.isChecked():
             date_flg = 2
-        self.add_date(name_flg+date_flg)
+        if name_flg+date_flg>0:
+            self.add_date(name_flg+date_flg)
         self.format = str(self.comboBox.currentText())
         if self.format == "jpeg":
             self.img = self.img.resize((self.max_width,self.max_height), Image.ANTIALIAS)
